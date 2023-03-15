@@ -26,12 +26,9 @@ const goToAddContact = () => {
 </script>
 
 <template>
-  <div
-    class="hello"
-    style="display: flex; justify-content: center; flex-direction: column"
-  >
+  <div class="hello container_list">
     <h1 style="color: #123644">{{ title }}</h1>
-    <div style="display: flex; justify-content: flex-end">
+    <div class="position_button">
       <v-btn
         type="button"
         width="20"
@@ -43,29 +40,15 @@ const goToAddContact = () => {
         /></span>
       </v-btn>
     </div>
-    <div
-      style="
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 0.5rem;
-        padding: 2rem;
-      "
-    >
+    <div class="grid_task">
       <div
         v-for="(item, index) in agenda"
         :key="index"
-        style="width: 300px; aspect-ratio: 16/9; background-color: #1da1c7; display: flex; justify-content: center;"
+        class="tasks"
         @click="goToDetail(item.id)"
       >
-        <div
-          style="
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-          "
-        >
-          <div style="color: white;">
+        <div class="desc_task">
+          <div style="color: white">
             <p><b>Contact: </b> {{ item.name }}</p>
             <p><b>Phone: </b> {{ item.contact }}</p>
           </div>
@@ -74,4 +57,33 @@ const goToAddContact = () => {
     </div>
   </div>
 </template>
-<style scoped></style>
+<style scoped>
+.container_list {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.position_button {
+  display: flex;
+  justify-content: flex-end;
+}
+.grid_task {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.5rem;
+  padding: 2rem;
+}
+.tasks {
+  width: 300px;
+  aspect-ratio: 16/9;
+  background-color: #1da1c7;
+  display: flex;
+  justify-content: center;
+}
+.desc_task {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+</style>

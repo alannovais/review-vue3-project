@@ -1,13 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HelloWorld from '../components/HelloWorld.vue'
+import TaskListView from '@/pages/TaskListView.vue'
 
 const router = createRouter({
   history: createWebHistory(""),
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'TaskListView',
+      component: TaskListView
     },
     {
       path: '/task/:id?',

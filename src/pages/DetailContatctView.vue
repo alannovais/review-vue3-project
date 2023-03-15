@@ -140,19 +140,9 @@ const picture = (event) => {
 </script>
 
 <template>
-  <div
-    class="hello"
-    style="display: flex; justify-content: center; flex-direction: column"
-  >
+  <div class="hello container_manager_task">
     <h1 style="color: #123644">{{ title }}</h1>
-    <div
-      style="
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-bottom: 1.3rem;
-      "
-    >
+    <div class="group_buttons">
       <div>
         <v-btn
           type="button"
@@ -234,4 +224,16 @@ const picture = (event) => {
     />
   </div>
 </template>
-<style scoped></style>
+<style scoped>
+.container_manager_task {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.group_buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 1.3rem;
+}
+</style>
